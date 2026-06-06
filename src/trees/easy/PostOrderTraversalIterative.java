@@ -42,6 +42,35 @@ public class PostOrderTraversalIterative {
         return result;
     }
 
+    public List<Integer> postOrderTraversalOptimised(TreeNode root) {
+
+        Stack<TreeNode> nodeStack = new Stack<>();
+        List<Integer> result = new ArrayList<>();
+        TreeNode lastVisited = null;
+
+        if (root == null) return result;
+
+
+        while (!nodeStack.isEmpty() || root != null) {
+
+            while (root != null) {
+                nodeStack.push(root);
+                root = root.left;
+            }
+
+            if (nodeStack.peek().right != null && lastVisited != nodeStack.peek().right) {
+                root = nodeStack.peek().right;
+
+            } else {
+                lastVisited = nodeStack.pop();
+                result.add(lastVisited.val);
+            }
+        }
+
+        return result;
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -60,5 +89,9 @@ public class PostOrderTraversalIterative {
         PostOrderTraversalIterative postOrderTraversalIterative = new PostOrderTraversalIterative();
 
         System.out.print(postOrderTraversalIterative.postOrderTraversal(node));
+
+        System.out.println("");
+
+        System.out.println(postOrderTraversalIterative.postOrderTraversalOptimised(node));
     }
 }
