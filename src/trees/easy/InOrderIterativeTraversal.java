@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class InOrderTraversalIterative {
+public class InOrderIterativeTraversal {
 
 
     static class Node {
@@ -58,7 +58,7 @@ public class InOrderTraversalIterative {
         node.right.right = new Node(7);
         node.right.right.left = new Node(8);
 
-        InOrderTraversalIterative inOrderTraversalIterative = new InOrderTraversalIterative();
+        InOrderIterativeTraversal inOrderTraversalIterative = new InOrderIterativeTraversal();
 
         List<Integer> result = inOrderTraversalIterative.inOrderTraversal(node);
 
