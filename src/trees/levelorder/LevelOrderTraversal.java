@@ -1,7 +1,5 @@
 package trees.levelorder;
 
-import trees.easy.PostOrderTraversalIterative;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
